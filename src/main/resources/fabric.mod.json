@@ -1,29 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "cheatblock",
   "version": "${version}",
 
-  "name": "Template Mod",
-  "description": "Template mod for binhcoi",
+  "name": "Cheat Block Mod",
+  "description": "Use block to make your tool item unbreakable",
   "authors": [
     "binhcoi"
   ],
   "contact": {
-    "homepage": "https://binhcoi.net/",
-    "sources": "https://github.com/binhcoi/MCModTemplate"
+    "homepage": "https://binhcoi.com/",
+    "sources": "https://github.com/binhcoi/MCCheatBlock"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/cheatblock/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.binhcoi.mcmods.modid.TemplateMod"
+      "com.binhcoi.mcmods.cheatblock.CheatBlockMod"
     ]
   },
-  "mixins": [
-    "modid.mixins.json"
+  "mixins": [    
   ],
 
   "depends": {

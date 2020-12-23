@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "cheatblock:block/cheat_block"
+        }
+    }
+}

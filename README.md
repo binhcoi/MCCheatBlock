@@ -1,5 +1,3 @@
-# Binhcoi Template mod
-Template mod
+# Cheat Block Mod
 ## Description
-Template Minecraft mod using FabricMC/fabric-example-mod
-Changed values that are related to me for easy future developement
+Activate the block while holding a tool item. The item will be made unbreakable
