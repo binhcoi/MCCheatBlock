@@ -41,16 +41,16 @@ public class TreeFallHandler implements Before {
         HashSet<BlockCoordinate> processed = new HashSet<BlockCoordinate>();
         processed.add(toBlockCoordinate(originalPos));
 
-        Queue<BlockPos> potentialPos = new LinkedList<BlockPos>();
+        Queue<BlockCoordinate> potentialPos = new LinkedList<BlockCoordinate>();
 
-        getSurrounding(originalPos, processed, potentialPos);
+        getSurrounding(originalPos, processed, potentialPos, 1);
 
         while (potentialPos.size() > 0) {
-            BlockPos currentPos = potentialPos.remove();
-            processed.add(toBlockCoordinate(currentPos));
-            if (isTreePart(world.getBlockState(currentPos))) {
-                treePos.add(currentPos);
-                getSurrounding(currentPos, processed, potentialPos);
+            BlockCoordinate currentPos = potentialPos.remove();
+            processed.add(currentPos);
+            if (isTreePart(world.getBlockState(currentPos.pos)) ) {
+                treePos.add(currentPos.pos);
+                getSurrounding(currentPos.pos, processed, potentialPos, currentPos.layer+1);
             }
         }
         return treePos;
@@ -58,12 +58,15 @@ public class TreeFallHandler implements Before {
 
     private static final EnumSet<Direction> ALL_DIRECTIONS = EnumSet.allOf(Direction.class);
 
-    private void getSurrounding(BlockPos pos, HashSet<BlockCoordinate> processed, Queue<BlockPos> potentialPos) {
+    private void getSurrounding(BlockPos pos, HashSet<BlockCoordinate> processed, Queue<BlockCoordinate> potentialPos, int layer) {
         ALL_DIRECTIONS.forEach(direction -> {
+            if (direction == Direction.DOWN) return;
+            if (direction != Direction.UP && layer>10) return;
+            if (direction == Direction.UP && layer>13) return;
             BlockPos temp = pos.offset(direction);
-            BlockCoordinate coord = toBlockCoordinate(temp);
+            BlockCoordinate coord = new BlockCoordinate(temp,layer);
             if (!processed.contains(coord))
-                potentialPos.add(temp);
+                potentialPos.add(coord);
         });
 
     }
