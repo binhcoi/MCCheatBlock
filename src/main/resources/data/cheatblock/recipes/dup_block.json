@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#B#",
+        "GRG",
+        "SLS"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:diamond"
+        },
+        "B": {
+            "item": "minecraft:bucket"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "R": {
+            "item": "minecraft:redstone_torch"
+        },
+        "S": {
+            "item": "minecraft:stone"
+        },
+        "L": {
+            "item": "minecraft:lava_bucket"
+        }
+    },
+    "result": {
+        "item": "cheatblock:dup_block",
+        "count": 1
+    }
+}

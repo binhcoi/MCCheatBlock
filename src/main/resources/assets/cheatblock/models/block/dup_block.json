@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/cube_column",
+    "textures": {
+        "end": "cheatblock:block/dup_block_top",
+        "side": "cheatblock:block/dup_block_side"
+    }
+}
